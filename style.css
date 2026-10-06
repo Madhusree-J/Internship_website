@@ -1,0 +1,749 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box
+}
+body{
+    font-family: "Playfair Display", serif;
+    contain: paint;
+}
+.nav{
+    background-color:aliceblue;
+    animation: nav 1s forwards;
+}
+ @keyframes nav {
+    0%{
+        transform: translateY(-300px);
+    }
+    100%{
+        transform: translatey(0px);
+    }
+ }
+.display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px
+}
+.clr{
+    color:blueviolet
+}
+.clr1{
+    background-color: blueviolet;
+    color: white;
+}
+.display a{
+    padding:10px;
+    position:relative;
+    cursor: pointer;
+    z-index: 9999;
+}
+.display a::before{
+    content: "";
+    height: 0%;
+    width:0%;
+    position:absolute;
+    top:0px;
+    left:0px;
+    display: inline;
+    background-color: blueviolet;
+    z-index: -1;
+    transition:all 1s;
+    border-radius:20px
+}
+.display a:hover::before{
+    height: 100%;
+    width:100%;
+}
+.display a:hover{
+    color: white;
+}
+input:checked+div{
+    left:23px
+}
+input:checked~div{
+    left:23px
+}
+.nav label, .nav input{
+    display:none
+}
+.links{
+    transition: all 1s;
+}
+.sec1{
+    padding-top:60px!important
+}
+.row1{
+    z-index: -1;
+    position: relative;
+}
+@media only screen and (min-width:300px) and (max-width:992px){
+    .row1{
+        flex-direction: column-reverse;
+        text-align: center!important;
+    }
+    .popular{
+        text-align: start!important;   
+    }
+}
+.leftboxani{
+    animation: leftbox 1s forwards;
+    animation-delay: 2s;
+    transform: translate(-1500px, 100px);    
+    transition: all 1s;
+}
+@keyframes leftbox {
+    0%{
+        transform: translate(-1500px, 100px);
+    }
+    100%{
+        transform: translate(0px, 0px);
+    }
+}
+.leftbox h1{
+    font-size: clamp(35px, 3vw, 130px);
+    padding:0px 30px
+}
+.leftbox p{
+    font-size: 30px;
+    padding:0px 30px
+}
+.leftbox form{
+    margin:0px 30px;
+    border:2px solid blueviolet;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 5px 5px 1px rgb(198, 198, 198);
+
+}
+.leftbox form input{
+    padding:8px;
+    border-radius:10px;
+    border:none;
+    background-color: rgb(238, 236, 236);
+    outline: none;
+    width:27%;
+}
+.leftbox form button{
+    border-radius: 10px;
+    border:none;
+    background-color: blueviolet;
+    color:white
+}
+.img1{
+    height: 450px;
+    width: 630px;
+    animation: img1 1s forwards;
+    animation-delay: 1s;
+    transform: translate(700px, 100px);
+    transition: all 1s;
+}
+@keyframes img1 {
+    0%{
+        transform: translate(700px, 100px) ;
+    }
+    100%{
+        transform: translate(0px, 0px);
+    }
+}
+.ani1{
+    padding:0px 0px 0px 45px!important;
+}
+
+.scrollbox{
+    position: relative;
+    height: 60px;
+    /* right:70px; */
+    overflow: hidden; 
+    border: none;
+    border-radius: 30px;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0;
+}
+.scrollbox1{
+   display: flex;
+   width: max-content;
+   height: 100%;
+   align-items: center; 
+   gap:20px;
+   animation: scrollbutton 15s linear infinite;
+}
+.scrollbutton{
+    padding:3px 25px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    border:none;
+    border:2px solid lightgray;  
+    background-color: transparent;
+}
+.sec2{
+    font-size:30px;
+    color:white;
+    position:relative;
+    background-color: black;
+    z-index: -2;
+    min-height:30vh
+}
+.sec2::after{
+    position:absolute;
+    content: "";
+    top:0px;
+    left:0px;
+    height:100%;
+    width:100%;
+    z-index: -1;
+    background-image: url("./students.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0px -100px;
+    opacity: 0.5;
+}
+.sec2 h1{
+    font-size: clamp(30px, 6vh, 50px)!important;
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+}
+.sec3{
+    padding:100px 70px 0px 70px;
+    animation: sec3 linear forwards;
+    animation-timeline: view();
+    animation-range: entry 10% cover 30%;
+    transform: translateY(300px);
+    opacity: 0;
+}
+@keyframes sec3 {
+    from{
+        transform: translateY(300px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+.sec2 p{
+    font-size: clamp(20px, 5vh, 30px)!important;
+}
+.tag{
+    height: 50px;
+    width: 220px;
+    background-color: rgb(232, 211, 251);
+    font-size: clamp(10px, 2vw, 18px);
+    border-radius: 30px;
+    align-items: center;
+}
+.tag p{
+    color: blueviolet;
+}
+.tag i{
+    color:goldenrod
+}
+.sec3 div:nth-child(2) h1{
+    font-size: clamp(35px, 4vw, 130px);
+}
+.box{
+    width:100%;
+}
+.card{
+    padding:10px!important;
+    border:2px solid blueviolet!important;
+    border-radius: 20px;
+    transition: all 1s;
+}
+.card img{
+    border-radius:20px;
+    height:250px
+}
+.card h2{
+    transition: all 1s;
+}
+.para2{
+    font-size: 20px !important;
+}
+.card:hover {
+    transform: translateY(-10px);
+    border:2px solid lightgrey!important;
+    box-shadow: 0px 0px 10px 1px rgb(203, 202, 202);
+}
+.card:hover h2{
+    color:blueviolet
+}
+.btn1{
+    padding:10px 45px;
+    border-radius:10px;
+    border:2px solid blueviolet;
+    transition:all 1s;
+    position:relative;
+    background-color: transparent;
+    overflow: hidden;
+    z-index: 1;
+}
+.btn1::after{
+    content: "";
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:0%;
+    height:100%;
+    background-color: blueviolet;
+    z-index: -1;
+    transition: all 1s;
+}
+.btn1:hover{
+    color:white;
+    transform: translateY(-2px);
+}
+.btn1:hover::after{
+    width:100%;
+}
+.sec4{
+    padding-top:30px;
+    animation: sec3 linear forwards;
+    animation-timeline: view();
+    animation-range: entry 10% cover 30%;
+    transform: translateY(300px);
+    opacity: 0;
+
+}
+.sec4 h2{
+    font-size: clamp(35px, 4vw, 130px);
+}
+.company{
+    height:200px;
+    position:relative;
+    overflow:hidden;
+    background-color: rgb(214, 173, 252);
+    box-shadow: 0px 0px 5px 1px grey;
+    margin:60px 0px
+}
+.img2{
+    height:80px;
+    white-space: nowrap;
+}
+.imgbox{
+    width: max-content;
+   height: 100%;
+   align-items: center; 
+   gap:20px;
+   animation: scrollbutton 5s linear infinite;
+}
+.sec5 h1{
+    font-size: clamp(35px, 4vw, 130px);
+}
+.sec5{
+    animation: sec3 linear forwards;
+    animation-timeline: view();
+    animation-range: entry 10% cover 30%;
+    transform: translateY(300px);
+    opacity: 0;
+
+}
+.intern>i{
+    height:50px;
+    width:50px;
+    font-size:30px;
+    background-color: lightblue;
+    border-radius:10px;
+    padding:10px 10px 10px 7px
+}
+.intern>div span{
+    padding:3px 10px;
+    background-color: lightgreen!important;
+    border-radius: 5px;
+    font-size:10px;
+}
+.intern>div i{
+    color:goldenrod;
+    font-size:25px
+}
+.intern>div span i{
+    color:goldenrod;
+    font-size:10px
+}
+.intern1{
+    font-size:10px;
+}
+.intern1 p:nth-child(1){
+    background-color: rgb(248, 203, 122);
+    border-radius:5px;
+    padding:3px 10px;
+    color:red
+}
+.intern1 p:nth-child(2){
+    background-color: rgb(213, 240, 248);
+    border-radius:5px;
+    padding:3px 10px;
+    color:blue
+}
+.intern3 p{
+    font-size:18px
+}
+.intern3{
+    border-bottom: 2px solid lightgray;
+    padding:0px 0px 15px 0px
+}
+.intern4 h4{
+    font-size:20px;
+}
+.intern4 button{
+    padding:5px 20px;
+    background-color: blueviolet;
+    color:white;
+    border:none;
+    border-radius: 10px;
+}
+.sec6>div{
+    border:1px solid blueviolet;
+    border-radius: 20px;
+    transition: all 0.5s;
+    width: 400px!important;
+}
+.sec6>div:hover{
+    transform: translateY(-4px);
+    box-shadow: 0px 0px 5px 1px lightgray;
+}
+.sec6{
+    gap:100px!important
+}
+.sec7>h1{
+    font-size: clamp(35px, 4vw, 130px);
+}
+.sec7 span{
+    display: inline-block;
+    height:40px;
+    width:40px;
+    border-radius:50%;
+    background-color: blueviolet;
+    padding:8px 5px;
+    margin:0px 5px
+}
+.work div{
+    border:2px solid lightgrey;
+    position:relative;
+    border-radius:20px;
+    transition: all 1s;
+}
+.work h1{
+    position:absolute;
+    top:10px;
+    right:20px;
+    font-size:80px;
+    opacity:0.1;
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    color:blueviolet;
+    transition: all 1s;
+}
+.work div h2{
+    transition: all 1s;
+}
+.img3{
+    height:70px;
+    width: 70px;
+    background-color:  blueviolet;
+    padding:10px;
+    border-radius:20px; 
+}
+.work div:hover{
+    border:2px solid blueviolet
+}
+.work div:hover h1{
+    opacity:1
+}
+.work div:hover h2{
+    color:blueviolet
+}
+.sec8>h1{
+    font-size: clamp(35px, 4vw, 130px);
+}
+.arrow1{
+    height:70px;
+    width:70px;
+    border-radius:50%;
+    font-size: 40px;
+    background-color: rgb(216, 179, 251);
+}
+.img4{
+    height:50px;
+    width:50px;
+    border-radius:50%
+}
+.review1{
+    border: 2px solid blueviolet;
+    border-radius:20px;
+}
+.review1 i{
+    font-size:25px;
+    color: goldenrod;
+}
+.review1>p{
+    height:130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sec9{
+    background-color: blueviolet;
+}
+.sec9 h1{
+    font-size: clamp(35px, 4vw, 130px);
+}
+.buttonbox button{
+    padding:7px 30px;
+    font-size: 20px;
+    border-radius:10px;
+    border:none;
+}
+.buttonbox button:nth-child(1){
+    background-color: white;
+    color:blueviolet;
+    box-shadow: 0px 0px 5px 1px black;
+}
+.buttonbox button:nth-child(2){
+    background-color: transparent;
+    color:white;
+    border:2px solid white
+}
+.buttonbox button:nth-child(1):hover{
+    background-color: transparent;
+    color:white
+}
+.buttonbox button:nth-child(2):hover{
+    background-color: white;
+    color:blueviolet
+}
+.icon i{
+    height:40px;
+    width:40px;
+    border-radius: 50%;
+    border:2px solid black;
+    padding:8px;
+    font-size:20px
+}
+.footer input{
+    padding:10px 35px 10px 10px;
+    border:none;
+    outline:none;
+    border-radius:10px;
+    border:2px solid blueviolet
+}
+.footer button{
+    padding:7.5px 10px;
+    font-size:20px;
+    border:none;
+    border-radius:10px;
+    background-color: blueviolet;
+    color:white
+}
+ @keyframes scrollbutton {
+    0%{
+        transform: translate3d(0, 0, 0);
+    }
+    100%{
+        transform: translate3d(-50%, 0, 0);
+    }
+ }
+ .ani2{
+    position:relative;
+    left:200%;
+    animation: ani2 linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 20%;
+    transition: all 1s;
+ }
+@keyframes ani2 {
+    from{
+        left:200%;
+    }
+    to{
+        left:0%
+    }
+}
+@media only screen and (min-width:1288px) and (max-width:1488px){
+    .img1{
+        width:550px!important
+    }
+    .arrow1{
+        height: 60px;
+        width: 60px;
+    }
+}
+@media only screen and (min-width:300px) and (max-width:1390px){
+    .box{
+        justify-content: center!important;
+        flex-wrap: wrap!important;
+        gap: 67px!important;
+        align-items: center!important;
+        padding-right: 0px;
+    }
+    .sec3{
+            padding: 30px 10px 0px 10px;
+    }
+    .sec3 div:nth-child(2) h1 {
+    text-align: center;
+    }
+    .para2{
+        text-align: center;
+        font-size: 15px!important;
+    }
+    .arrow1{
+        height: 50px;
+        width: 50px;
+        font-size:30px
+    }
+    .review1>p{
+        font-size: 14px;
+    }
+    .review2{
+        font-size: 13px;
+    }
+}
+@media only screen and (min-width:992px) and (max-width:1288px){
+    .img1{
+        width:450px!important
+    }
+}
+@media only screen and (min-width:300px) and (max-width:1170px){
+    .links{
+        flex-direction: column;
+        align-items: start;
+        position:fixed;
+        left:150%;
+        top:110px;
+        background-color: aliceblue;
+        width:96%;
+        padding:30px;
+        border-radius:20px;
+        z-index:9999
+    }
+    .nav label{
+        display:inline-block
+    }
+    .leftbox form{
+        justify-content: center;
+        gap:10px
+    }
+    .sec2 p{
+        font-size: clamp(20px, 4vh, 30px)!important;
+    }
+    .work div{
+        width:300px !important;
+        height: 310px;
+    }
+    .work h1{
+        font-size: 55px;
+    }
+        .arrow1 {
+        height: 40px;
+        width: 40px;
+        font-size: 20px;
+    }
+    .review3{
+        display:none
+    }
+}
+@media only screen and (min-width:300px) and (max-width:992px){
+    .img1{
+        width:300px!important;
+        height:300px!important;
+    }
+    .leftbox h1{
+            padding: 0px 10px;
+    }
+    .leftbox p {
+    font-size: 20px;
+    padding: 0px 10px;
+    }
+    .sec2 p{
+        font-size: clamp(20px, 3vh, 30px)!important;
+    }
+    .work{
+        flex-direction: column;
+        gap:20px
+    }
+    .work div{
+        width: 450px !important;
+    }
+    .sec7 span{
+        transform:rotate(90deg)
+    }
+    .buttonbox button {
+    padding: 5px 13px;
+    font-size: 16px;
+    }
+    .footerrow{
+        flex-direction: column;
+        gap:20px;
+    }
+    .sec8{
+        animation: sec3 linear forwards;
+        animation-timeline: view();
+        animation-range: entry 10% cover 30%;
+        transform: translateY(300px);
+        opacity: 0;
+    }
+}
+@media only screen and (min-width:425px) and (max-width:768px){
+    .img1{
+        width:400px!important;
+        height:400px!important;
+    }
+    .scrollbox{
+        right: -80px!important;
+    }
+    .sec2::after{
+        background-position:center;
+    }
+    .tag{
+        height: 45px;
+        width: 195px;
+    }
+    .review4{
+        display:none
+    }
+    .review1{
+        width:300px!important
+    }
+}
+@media only screen and (min-width:300px) and (max-width:510px){   
+.tag {
+    height: 35px;
+    width: 135px;
+}
+    .work div {
+        width: 300px !important;
+    }
+}
+@media only screen and (min-width:300px) and (max-width:425px){
+    .scrollbox{
+        right: -80px!important;
+    }
+    .sec2::after{
+        background-position:center;
+    }
+    .intern4 button{
+            padding: 5px 6px
+    }
+    .intern4 h4{
+            font-size: 15px;
+    }
+    .review4{
+        display:none
+    }
+    .review1{
+        width:300px!important
+    }
+    .buttonbox button {
+        padding: 4px 6px;
+        font-size: 10px;
+    }
+}
